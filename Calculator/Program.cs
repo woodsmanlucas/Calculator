@@ -31,7 +31,7 @@ namespace Calculator
 
         public static double div(double num1, double num2)
         {
-               return (num1 / num2);
+            return (num1 / num2);
         }
 
         public static double rem(double num1, double num2)
@@ -48,20 +48,22 @@ namespace Calculator
             while (!input.Equals("q"))
             {
 
-                    string[] words = input.Split(' ');
-                    if(words.Length > 2)
+                string[] words = input.Split(' ');
+                if (words.Length > 2)
                 {
                     string op = words[1];
                     double num1 = 1;
-                    if(words[0] == "Ans")
+                    if (words[0] == "Ans")
                     {
                         num1 = Ans;
                     }
-                    else {
+                    else
+                    {
                         try
                         {
                             num1 = Convert.ToDouble(words[0]);
-                        } catch (FormatException e)
+                        }
+                        catch (FormatException e)
                         {
                             Console.WriteLine(e.Message);
                             error = true;
@@ -94,12 +96,12 @@ namespace Calculator
                     }
                     else if (op.Equals("/"))
                     {
-                      if(num2 == 0)
+                        if (num2 == 0)
                         {
                             Console.WriteLine("Please don't do that");
                             error = true;
                         }
-                      else
+                        else
                         {
                             Ans = div(num1, num2);
                         }
@@ -117,7 +119,7 @@ namespace Calculator
                         Console.WriteLine("Only the following operators are supported +, -, /, *, %");
                         error = true;
                     };
-                    if(error == false)
+                    if (error == false)
                     {
                         Console.WriteLine(Ans);
                     }
@@ -126,10 +128,10 @@ namespace Calculator
                 {
                     Console.WriteLine("Please use spaces and type two numbers with an operator in between");
                 }
-                    
 
-                    input = Console.ReadLine();
-               
+
+                input = Console.ReadLine();
+
             }
         }
     }
